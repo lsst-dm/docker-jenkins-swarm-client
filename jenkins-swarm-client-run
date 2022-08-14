@@ -16,7 +16,7 @@ run_swarm() {
 
   declare -a cmd
 
-  cmd=(strace "$java")
+  cmd=("$java")
   if [[ -n $JAVA_ARGS ]]; then
     declare -a java_args_tmp
     IFS=" " read -r -a java_args_tmp <<< "$JAVA_ARGS"
