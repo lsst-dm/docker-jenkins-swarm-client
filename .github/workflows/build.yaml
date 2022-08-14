@@ -21,6 +21,8 @@ jobs:
     - name: Build swarm image
       run: |
         docker build . \
+          --build-arg JSWARM_UID=48435 \
+          --build-arg JSWARM_GID=202 \
           --tag $CONTAINER_NAME \
           --label "runnumber=${GITHUB_RUN_ID}"
     - name: Log in to GitHub Container Registry
