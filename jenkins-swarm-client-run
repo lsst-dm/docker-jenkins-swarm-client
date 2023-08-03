@@ -28,7 +28,7 @@ run_swarm() {
   [[ -n $JSWARM_USERNAME ]] && cmd+=(-username "$JSWARM_USERNAME")
   [[ -n $JSWARM_PASSWORD ]] && cmd+=(-passwordEnvVariable JSWARM_PASSWORD)
   [[ -n $JSWARM_AGENT_NAME ]] && cmd+=(-name "$JSWARM_AGENT_NAME")
-  [[ -n $JSWARM_MASTER_URL ]] && cmd+=(-master "$JSWARM_MASTER_URL")
+  [[ -n $JSWARM_URL ]] && cmd+=(-url "$JSWARM_URL")
   [[ -n $JSWARM_LABELS ]] && cmd+=(-labels "$JSWARM_LABELS")
   [[ -n $JSWARM_FSROOT ]] && cmd+=(-fsroot "$JSWARM_FSROOT")
   [[ $JSWARM_DISABLE_CLIENTS_UNIQUE_ID == true ]] \
@@ -39,8 +39,6 @@ run_swarm() {
     && cmd+=(-deleteExistingClients)
   [[ -n $JSWARM_DESCRIPTION ]] && cmd+=(-description "$JSWARM_DESCRIPTION")
   [[ -n $JSWARM_TUNNEL ]] && cmd+=(-tunnel "$JSWARM_TUNNEL")
-  [[ -n $JSWARM_AUTO_DISCOVERY_ADDRESS ]] &&
-    cmd+=(-autoDiscoveryAddress "$JSWARM_AUTO_DISCOVERY_ADDRESS")
 
   if [[ -n "$JSWARM_TOOL_LOCATIONS" ]]; then
     for t in $JSWARM_TOOL_LOCATIONS; do
