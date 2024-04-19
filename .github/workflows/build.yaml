@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-    pull_request:
+  pull_request:
 
 env:
   CONTAINER_NAME: jenkins-swarm-client
