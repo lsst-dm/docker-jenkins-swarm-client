@@ -10,5 +10,5 @@ Usage
 ---
 
 ```sh
-docker run -ti lsstsqre/jenkins-swarm-client
+docker run -ti ghcr.io/lsst-dm/jenkins-swarm-client
 ```

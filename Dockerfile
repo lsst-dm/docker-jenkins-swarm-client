@@ -1,7 +1,7 @@
 #
 # download swarm jar
 #
-FROM alpine:3 as downloader
+FROM alpine:3 AS downloader
 
 ARG JSWARM_VERSION=3.46
 ARG JSWARM_JAR_NAME=swarm-client-${JSWARM_VERSION}.jar
@@ -19,7 +19,7 @@ RUN curl -sSLo /${JMXEX_JAR_NAME} ${JMXEX_URL}
 #
 # pkg base
 #
-FROM alpine:3 as pkg_base
+FROM alpine:3 AS pkg_base
 
 RUN apk add --no-cache --upgrade openjdk21 bash git docker make
 
